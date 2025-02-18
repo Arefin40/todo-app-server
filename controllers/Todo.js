@@ -13,6 +13,12 @@ export const getAll = request(async (req, res) => {
    res.status(200).send(todos);
 });
 
+// get todo details
+export const getTodo = request(async (req, res) => {
+   const todo = await Todo.findOne({ id: req.params.id });
+   res.status(200).send(todo);
+});
+
 // update todo
 export const update = request(async (req, res) => {
    const { title, completed } = req.body;
