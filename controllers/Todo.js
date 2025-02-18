@@ -15,7 +15,7 @@ export const getAll = request(async (req, res) => {
 
 // get todo details
 export const getTodo = request(async (req, res) => {
-   const todo = await Todo.findOne({ id: req.params.id });
+   const todo = await Todo.findOne({ _id: req.params.id });
    res.status(200).send(todo);
 });
 
