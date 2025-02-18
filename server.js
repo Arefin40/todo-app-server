@@ -4,6 +4,7 @@ import express from "express";
 import corsOptions from "./config/corsOptions.js";
 import { connectToDB } from "./config/db.js";
 import homeRoute from "./routes/homeRoute.js";
+import todoRoutes from "./routes/todoRoutes.js";
 
 dotenv.config();
 const app = express();
@@ -14,6 +15,7 @@ app.use(express.json());
 
 // routes
 app.use("/", homeRoute);
+app.use("/todos", todoRoutes);
 
 const PORT = process.env.PORT || 5173;
 // connect to the database and then listen for connections
